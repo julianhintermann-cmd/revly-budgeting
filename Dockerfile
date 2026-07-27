@@ -39,7 +39,8 @@ ENV PYTHONUNBUFFERED=1 \
     DATABASE_URL=sqlite+aiosqlite:////data/revly.db \
     DEFAULT_LOCALE=de
 
-USER appuser
+# No USER directive: the entrypoint starts as root, fixes ownership of the
+# mounted data dirs (NAS bind mounts) and drops to appuser via setpriv.
 WORKDIR /app/backend
 VOLUME ["/data"]
 EXPOSE 8000

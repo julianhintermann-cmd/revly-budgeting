@@ -3,9 +3,9 @@
 # ============================================================================
 # Ablage:  /volume2/docker/revly-budgeting/revly-budgeting.yaml
 #
-# Einmalig vorbereiten (Container läuft als Non-Root-User mit UID 1000):
-#   mkdir -p /volume2/docker/revly-budgeting /volume1/data/revly-budgeting
-#   chown -R 1000:1000 /volume2/docker/revly-budgeting /volume1/data/revly-budgeting
+# Keine Vorbereitung nötig: Das Image legt die Ordner beim ersten Start selbst
+# an, setzt die Berechtigungen (chown auf UID 1000) und droppt dann auf den
+# unprivilegierten App-User. Ordner müssen NICHT vorab existieren.
 #
 # Start:   docker compose -f revly-budgeting.yaml up -d
 # Update:  docker compose -f revly-budgeting.yaml pull
@@ -45,7 +45,5 @@ services:
       # - ALLOWED_ORIGINS=https://budget.jucloudy.com  # nur nötig bei Zugriff über eigene Domain/anderen Origin
       # - DATABASE_URL=postgresql://user:pass@host:5432/revly   # optional statt SQLite
     # Der Healthcheck ist im Image eingebaut (GET /api/health alle 30s).
-    #
-    # Falls du das chown oben weglassen willst, stattdessen nach NAS-Konvention
-    # (PUID/PGID=0) als root laufen lassen:
-    # user: "0:0"
+    # Hinweis: KEIN "user:" setzen – der Entrypoint braucht den Root-Start,
+    # um die Bind-Mount-Rechte zu setzen, und wechselt danach selbst auf UID 1000.
