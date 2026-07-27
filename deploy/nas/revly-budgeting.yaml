@@ -4,8 +4,8 @@
 # Ablage:  /volume2/docker/revly-budgeting/revly-budgeting.yaml
 #
 # Einmalig vorbereiten (Container läuft als Non-Root-User mit UID 1000):
-#   mkdir -p /volume2/docker/revly-budgeting/data
-#   chown -R 1000:1000 /volume2/docker/revly-budgeting/data
+#   mkdir -p /volume1/data/revly-budgeting
+#   chown -R 1000:1000 /volume1/data/revly-budgeting
 #
 # Start:   docker compose -f revly-budgeting.yaml up -d
 # Update:  docker compose -f revly-budgeting.yaml pull
@@ -30,9 +30,9 @@ services:
     ports:
       - "3064:8000"
     volumes:
-      # SQLite-DB, generierter SECRET_KEY und Beleg-Uploads.
-      # Golden Rule: Config/Runtime -> /volume2/docker/<container_name>
-      - /volume2/docker/revly-budgeting/data:/data
+      # SQLite-DB, generierter SECRET_KEY und Beleg-Uploads – alles Persistente
+      # liegt auf Volume 1 (HDD), wie bei den übrigen Datenbeständen:
+      - /volume1/data/revly-budgeting:/data
     environment:
       - TZ=Europe/Berlin
       - DEFAULT_LOCALE=de
