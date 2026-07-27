@@ -4,8 +4,8 @@
 # Ablage:  /volume2/docker/revly-budgeting/revly-budgeting.yaml
 #
 # Einmalig vorbereiten (Container läuft als Non-Root-User mit UID 1000):
-#   mkdir -p /volume1/data/revly-budgeting
-#   chown -R 1000:1000 /volume1/data/revly-budgeting
+#   mkdir -p /volume2/docker/revly-budgeting /volume1/data/revly-budgeting
+#   chown -R 1000:1000 /volume2/docker/revly-budgeting /volume1/data/revly-budgeting
 #
 # Start:   docker compose -f revly-budgeting.yaml up -d
 # Update:  docker compose -f revly-budgeting.yaml pull
@@ -30,12 +30,17 @@ services:
     ports:
       - "3064:8000"
     volumes:
-      # SQLite-DB, generierter SECRET_KEY und Beleg-Uploads – alles Persistente
-      # liegt auf Volume 1 (HDD), wie bei den übrigen Datenbeständen:
+      # Golden Rule:
+      #   Config/Runtime (SECRET_KEY)      -> Volume 2 (SSD)
+      #   Bulk-Daten (SQLite-DB + Belege)  -> Volume 1 (HDD)
+      - /volume2/docker/revly-budgeting:/config
       - /volume1/data/revly-budgeting:/data
     environment:
       - TZ=Europe/Berlin
       - DEFAULT_LOCALE=de
+      - DATA_DIR=/config
+      - DATABASE_URL=sqlite+aiosqlite:////data/revly.db
+      - UPLOAD_DIR=/data/uploads
       # - SECRET_KEY=bitte-langen-zufallswert-setzen   # optional; ohne wird einer generiert und in /data persistiert
       # - ALLOWED_ORIGINS=https://budget.jucloudy.com  # nur nötig bei Zugriff über eigene Domain/anderen Origin
       # - DATABASE_URL=postgresql://user:pass@host:5432/revly   # optional statt SQLite
