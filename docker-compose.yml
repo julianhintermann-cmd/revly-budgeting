@@ -1,0 +1,63 @@
+# Production-style single container:  docker compose up -d
+# Local development with hot reload:  docker compose --profile dev up
+services:
+  app:
+    build: .
+    image: revly-budgeting:latest
+    restart: unless-stopped
+    ports:
+      - "8000:8000"
+    volumes:
+      - revly-data:/data
+    environment:
+      - DEFAULT_LOCALE=de
+      # - SECRET_KEY=please-change-me            # otherwise auto-generated into /data
+      # - ALLOWED_ORIGINS=https://budget.example.com
+      # Use Postgres instead of the embedded SQLite (uncomment the db service below):
+      # - DATABASE_URL=postgresql+asyncpg://revly:revly@db:5432/revly
+
+  # ---------------------------------------------------------------------------
+  # Development profile: backend with --reload + Vite dev server
+  # ---------------------------------------------------------------------------
+  backend-dev:
+    profiles: ["dev"]
+    image: python:3.12-slim
+    working_dir: /app/backend
+    command: sh -c "pip install --no-cache-dir -r requirements.txt -r requirements-dev.txt && python -m alembic upgrade head && python -m uvicorn app.main:app --host 0.0.0.0 --port 8000 --reload"
+    volumes:
+      - ./backend:/app/backend
+    ports:
+      - "8000:8000"
+    environment:
+      - SECRET_KEY=dev-secret-not-for-production
+      - ALLOWED_ORIGINS=http://localhost:5173
+
+  frontend-dev:
+    profiles: ["dev"]
+    image: node:22-alpine
+    working_dir: /app/frontend
+    command: sh -c "npm ci --no-audit --no-fund && npm run dev -- --host"
+    volumes:
+      - ./frontend:/app/frontend
+    ports:
+      - "5173:5173"
+    environment:
+      - VITE_PROXY_TARGET=http://backend-dev:8000
+
+  # ---------------------------------------------------------------------------
+  # Optional: PostgreSQL instead of SQLite. Uncomment this service and the
+  # DATABASE_URL above, then `docker compose up -d`.
+  # ---------------------------------------------------------------------------
+  # db:
+  #   image: postgres:17-alpine
+  #   restart: unless-stopped
+  #   environment:
+  #     POSTGRES_USER: revly
+  #     POSTGRES_PASSWORD: revly
+  #     POSTGRES_DB: revly
+  #   volumes:
+  #     - pg-data:/var/lib/postgresql/data
+
+volumes:
+  revly-data:
+  # pg-data:
