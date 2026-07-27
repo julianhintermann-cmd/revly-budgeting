@@ -181,6 +181,8 @@ async def create_transaction(
                 (Decimal(amount) * src_rate / dst_rate).to_integral_value(rounding=ROUND_HALF_UP)
             )
         group = str(uuid.uuid4())
+        # Initialize the collections so later attribute access never lazy-loads
+        # (sync lazy loads raise MissingGreenlet under the async engine).
         source_txn = Transaction(
             household_id=hid,
             account_id=account.id,
@@ -205,6 +207,8 @@ async def create_transaction(
             transfer_account_id=account.id,
             created_by=user.id,
         )
+        source_txn.splits = []
+        dest_txn.splits = []
         db.add_all([source_txn, dest_txn])
         await db.flush()
         return source_txn
@@ -234,6 +238,9 @@ async def create_transaction(
     elif data.category_id is not None:
         await _check_category(db, hid, data.category_id)
         txn.category_id = data.category_id
+
+    if not data.splits:
+        txn.splits = []  # mark the collection loaded; see comment above
 
     db.add(txn)
     await db.flush()
