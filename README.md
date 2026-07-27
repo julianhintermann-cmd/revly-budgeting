@@ -15,7 +15,7 @@ UI in **German (default) and English** · installable **PWA** · dark & light mo
 ## Quick start
 
 ```bash
-docker run -d --name revly -p 8000:8000 -v revly-data:/data <DOCKERHUB_USERNAME>/revly-budgeting:latest
+docker run -d --name revly -p 8000:8000 -v revly-data:/data julianhintermann/revly-budgeting:latest
 ```
 
 Open http://localhost:8000, register the first user (becomes instance admin) and follow

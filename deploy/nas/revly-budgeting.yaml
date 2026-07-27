@@ -24,7 +24,7 @@
 
 services:
   revly-budgeting:
-    image: <DOCKERHUB_USERNAME>/revly-budgeting:latest
+    image: julianhintermann/revly-budgeting:latest
     container_name: revly-budgeting
     restart: unless-stopped
     ports:
