@@ -41,6 +41,12 @@ services:
       - DATA_DIR=/config
       - DATABASE_URL=sqlite+aiosqlite:////data/revly.db
       - UPLOAD_DIR=/data/uploads
+      # NAS-Konvention: als root laufen. Die UGOS-ACL-Defaults auf /volume1
+      # erzeugen sonst Dateien mit kaputten Rechte-Bits (----r-----), an denen
+      # jeder Nicht-Root-Prozess scheitert. PUID=1000 wäre auf normalen
+      # Linux-Hosts der sichere Default.
+      - PUID=0
+      - PGID=0
       # - SECRET_KEY=bitte-langen-zufallswert-setzen   # optional; ohne wird einer generiert und in /data persistiert
       # - ALLOWED_ORIGINS=https://budget.jucloudy.com  # nur nötig bei Zugriff über eigene Domain/anderen Origin
       # - DATABASE_URL=postgresql://user:pass@host:5432/revly   # optional statt SQLite
