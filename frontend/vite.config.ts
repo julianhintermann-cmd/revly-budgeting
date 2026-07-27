@@ -16,7 +16,18 @@ export default defineConfig({
       },
     },
   },
-  build: { outDir: 'dist', sourcemap: false },
+  build: {
+    outDir: 'dist',
+    sourcemap: false,
+    rollupOptions: {
+      output: {
+        manualChunks: {
+          recharts: ['recharts'],
+          vendor: ['react', 'react-dom', 'react-router-dom', '@tanstack/react-query', 'zustand'],
+        },
+      },
+    },
+  },
   test: {
     environment: 'jsdom',
     globals: true,

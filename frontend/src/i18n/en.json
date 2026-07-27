@@ -1,0 +1,214 @@
+{
+  "app": { "name": "revly budgeting", "tagline": "Your money. Your plan. Your data." },
+  "common": {
+    "save": "Save", "cancel": "Cancel", "delete": "Delete", "edit": "Edit",
+    "add": "Add", "close": "Close", "search": "Search …", "loading": "Loading …",
+    "none": "None", "all": "All", "yes": "Yes", "no": "No", "confirm": "Confirm",
+    "confirm_delete": "Really delete?", "actions": "Actions", "name": "Name",
+    "amount": "Amount", "date": "Date", "account": "Account", "category": "Category",
+    "notes": "Note", "tags": "Tags", "status": "Status", "type": "Type",
+    "currency": "Currency", "total": "Total", "month": "Month", "filter": "Filter",
+    "export": "Export", "import": "Import", "back": "Back", "create": "Create",
+    "apply": "Apply", "from": "From", "to": "To", "today": "Today",
+    "optional": "optional", "show_archived": "Show archived", "archived": "Archived",
+    "archive": "Archive", "restore": "Restore", "error": "Something went wrong",
+    "required": "Required", "per_month": "per month", "copied": "Copied!",
+    "no_data": "No data yet", "of": "of", "more": "More", "done": "Done",
+    "never": "Never", "active": "Active", "inactive": "Inactive"
+  },
+  "nav": {
+    "dashboard": "Dashboard", "accounts": "Accounts", "transactions": "Transactions",
+    "budget": "Budget", "categories": "Categories", "recurring": "Recurring",
+    "goals": "Goals", "debts": "Debts", "reports": "Reports",
+    "import": "Import", "settings": "Settings", "logout": "Log out",
+    "notifications": "Notifications"
+  },
+  "auth": {
+    "login_title": "Welcome back", "register_title": "Create your account",
+    "email": "Email", "password": "Password", "name": "Your name",
+    "household_name": "Household name", "household_placeholder": "e.g. The Smiths",
+    "invite_code": "Invite code", "have_invite": "I have an invite code",
+    "no_account": "No account yet? Register", "have_account": "Already registered? Log in",
+    "login": "Log in", "register": "Register", "base_currency": "Base currency",
+    "twofa_title": "Two-factor code", "twofa_hint": "Enter the 6-digit code from your authenticator app.",
+    "verify": "Verify", "failed": "Login failed – wrong email or password",
+    "rate_limited": "Too many attempts – please wait a moment", "email_taken": "This email is already registered",
+    "invite_invalid": "Invite code is invalid or expired", "password_hint": "At least 8 characters"
+  },
+  "onboarding": {
+    "title": "Let's go!", "subtitle": "Three steps to your budget.",
+    "step1_title": "1. Add an account", "step1_text": "Start with your main account and its current balance.",
+    "step2_title": "2. Review categories", "step2_text": "We created a default set – adjust it any time.",
+    "step3_title": "3. Assign your money", "step3_text": "Give every franc a job: assign your money to categories.",
+    "account_name_placeholder": "e.g. Checking", "current_balance": "Current balance",
+    "go_budget": "Go to budget", "categories_ready": "{{count}} categories ready", "skip": "Skip"
+  },
+  "dashboard": {
+    "title": "Dashboard", "net_worth": "Net worth", "to_budget": "Left to budget",
+    "budget_progress": "Budget {{month}}", "upcoming": "Upcoming bills",
+    "recent": "Recent transactions", "accounts": "Accounts", "no_bills": "No bills due",
+    "due_in": "in {{count}} days", "due_today": "due today", "view_all": "View all",
+    "income": "Income", "expenses": "Expenses", "overspent": "{{count}} categories overspent",
+    "spent_of": "{{spent}} of {{assigned}} spent", "new_transaction": "New transaction",
+    "this_month": "This month"
+  },
+  "accounts": {
+    "title": "Accounts", "new": "New account", "edit": "Edit account",
+    "types": {
+      "checking": "Checking", "savings": "Savings", "credit_card": "Credit card",
+      "cash": "Cash", "loan": "Loan", "investment": "Investment"
+    },
+    "initial_balance": "Starting balance", "opening_date": "Opening date",
+    "balance": "Balance", "cleared_balance": "Cleared balance", "working_balance": "Working balance",
+    "reconcile": "Reconcile", "reconcile_title": "Reconcile account",
+    "statement_balance": "Balance according to statement",
+    "reconcile_hint": "All cleared transactions get marked reconciled. Any difference creates an adjustment.",
+    "reconcile_done": "Reconciled – difference: {{diff}}", "delete_blocked": "Account has transactions – archive it instead",
+    "archived_section": "Archived accounts", "note": "Note", "in_base": "≈ {{amount}}"
+  },
+  "transactions": {
+    "title": "Transactions", "new": "New transaction", "edit": "Edit transaction",
+    "payee": "Payee", "payee_placeholder": "e.g. Walmart",
+    "expense": "Expense", "income": "Income", "transfer": "Transfer",
+    "transfer_to": "Target account", "split": "Split", "add_split": "Add split",
+    "split_remaining": "Remaining: {{amount}}", "splits_label": "Splits",
+    "statuses": { "pending": "Pending", "cleared": "Cleared", "reconciled": "Reconciled" },
+    "tags_placeholder": "Tags, comma separated",
+    "receipt": "Receipt", "upload_receipt": "Upload receipt", "view_receipt": "View receipt",
+    "min_amount": "Min amount", "max_amount": "Max amount",
+    "only_in": "Income only", "only_out": "Expenses only", "uncategorized": "Uncategorized",
+    "no_results": "No transactions found", "sum_filtered": "Sum (filtered)",
+    "selected": "{{count}} selected", "set_category": "Set category",
+    "add_tag": "Add tag", "set_status": "Set status", "delete_selected": "Delete selected",
+    "page_info": "Page {{page}} / {{pages}}", "prev": "Previous", "next": "Next",
+    "uncategorized_short": "Uncategorized", "transfer_badge": "Transfer"
+  },
+  "budget": {
+    "title": "Budget", "assigned": "Assigned", "activity": "Activity", "available": "Available",
+    "to_budget": "Left to budget", "all_assigned": "Everything assigned – nice!",
+    "overassigned": "Assigned more than available", "income_month": "Income {{month}}",
+    "autofill": "Autofill suggestion", "autofill_hint": "Based on the last 3 months' average",
+    "autofill_apply": "Apply suggestions", "move": "Move money",
+    "move_from": "From", "move_to": "To", "move_tbb": "Left to budget",
+    "overspent_hint": "Overspent – move money from another category",
+    "rollover_on": "Leftover carries over", "rollover_off": "Leftover resets monthly",
+    "no_categories": "No expense categories – create some under Categories."
+  },
+  "categories": {
+    "title": "Categories", "new": "New category", "edit": "Edit category",
+    "income_section": "Income", "expense_section": "Expenses",
+    "icon": "Icon", "color": "Color", "parent": "Parent category",
+    "rollover": "Carry leftover budget into next month",
+    "type_income": "Income", "type_expense": "Expense",
+    "delete_blocked": "Category is in use – archive it instead",
+    "subcategory_of": "Subcategory of {{name}}"
+  },
+  "recurring": {
+    "title": "Recurring & subscriptions", "new": "New recurring", "edit": "Edit recurring",
+    "frequency": "Frequency",
+    "freqs": { "weekly": "Weekly", "monthly": "Monthly", "quarterly": "Quarterly", "yearly": "Yearly", "custom": "Every N days" },
+    "every": "every {{count}}", "next_date": "Next due", "end_date": "End date",
+    "auto_create": "Book automatically", "auto_create_hint": "Otherwise reminder only",
+    "reminder_days": "Reminder (days ahead)", "run_now": "Book now",
+    "monthly_total": "Monthly fixed costs", "subscriptions": "{{count}} active recurrings",
+    "last_run": "Last booked: {{date}}"
+  },
+  "goals": {
+    "title": "Savings goals", "new": "New goal", "edit": "Edit goal",
+    "target_amount": "Target amount", "target_date": "Target date", "current": "Saved so far",
+    "linked_account": "Linked account", "linked_hint": "The account balance automatically counts as progress",
+    "manual_hint": "Without an account: track progress manually", "contribute": "Add contribution",
+    "monthly_needed": "{{amount}}/month needed", "reached": "Goal reached! 🎉",
+    "progress": "{{pct}} %"
+  },
+  "debts": {
+    "title": "Debt payoff", "new": "New debt", "edit": "Edit debt",
+    "balance": "Outstanding", "apr": "Interest rate (% p.a.)", "min_payment": "Minimum payment",
+    "method": "Strategy", "snowball": "Snowball", "avalanche": "Avalanche",
+    "snowball_hint": "Smallest debt first – quick wins",
+    "avalanche_hint": "Highest interest first – saves the most",
+    "monthly_budget": "Monthly debt budget", "plan": "Payoff plan",
+    "months_to_free": "Months until debt-free", "total_interest": "Total interest",
+    "debt_free": "Debt-free in {{month}}", "remaining": "Remaining",
+    "warning_min": "Budget is below the sum of minimum payments",
+    "warning_not_payable": "Not payable with this budget",
+    "comparison": "Strategy comparison", "no_debts": "No debts tracked – good for you!",
+    "linked_account": "Linked account"
+  },
+  "reports": {
+    "title": "Reports", "spending": "Spending by category", "trend": "Income vs. expenses",
+    "cashflow": "Cashflow calendar", "net_worth": "Net worth", "money_flow": "Where does my money go?",
+    "tight_days": "{{count}} days below zero", "start_balance": "Starting balance",
+    "export_pdf": "Export PDF", "export_csv": "Export CSV",
+    "income_sources": "Income", "expense_targets": "Expenses",
+    "assets": "Assets", "liabilities": "Liabilities", "net": "Net",
+    "months_12": "12 months", "months_24": "24 months", "period": "Period"
+  },
+  "imports": {
+    "title": "Import transactions", "upload": "Choose file",
+    "file_hint": "CSV, OFX/QFX or QIF – max. 5 MB",
+    "step_upload": "1. File", "step_map": "2. Mapping", "step_done": "3. Result",
+    "detected": "{{count}} rows detected ({{format}})",
+    "map_date": "Date column", "map_amount": "Amount column",
+    "map_payee": "Payee column", "map_notes": "Notes column",
+    "target_account": "Target account", "default_category": "Default category",
+    "decimal_comma": "Decimal comma (12,50)", "invert": "Invert signs",
+    "skip_duplicates": "Skip duplicates", "run_import": "Import",
+    "result": "{{imported}} imported, {{duplicates}} duplicates skipped, {{errors}} errors",
+    "preview": "Preview", "auto": "Automatic"
+  },
+  "settings": {
+    "title": "Settings",
+    "tabs": { "profile": "Profile", "security": "Security", "household": "Household", "tokens": "API tokens", "rates": "Exchange rates", "smtp": "Email (admin)" },
+    "profile": {
+      "language": "Language", "email_notifications": "Email notifications",
+      "theme": "Theme", "theme_light": "Light", "theme_dark": "Dark", "saved": "Saved"
+    },
+    "security": {
+      "change_password": "Change password", "current_password": "Current password",
+      "new_password": "New password", "password_changed": "Password changed – other sessions were logged out",
+      "twofa": "Two-factor authentication (TOTP)", "twofa_on": "2FA is active",
+      "twofa_off": "2FA is not active", "twofa_start": "Set up 2FA",
+      "twofa_scan": "Scan the QR code with your authenticator app and confirm with a code.",
+      "twofa_secret": "Secret (manual)", "twofa_code": "6-digit code",
+      "twofa_enable": "Enable 2FA", "twofa_disable": "Disable 2FA",
+      "twofa_enabled": "2FA enabled", "twofa_disabled": "2FA disabled"
+    },
+    "household": {
+      "title": "Household & members", "members": "Members", "role": "Role",
+      "roles": { "owner": "Owner", "editor": "Editor", "viewer": "Viewer" },
+      "invites": "Invites", "create_invite": "Create invite",
+      "invite_hint": "Share the code – redeemable at registration or under \"Join household\".",
+      "join": "Join household", "join_code": "Invite code",
+      "expires": "Valid until {{date}}", "used": "Used", "remove": "Remove",
+      "switch": "Active household", "create_new": "Create new household",
+      "base_currency": "Base currency", "member_count": "{{count}} members"
+    },
+    "tokens": {
+      "title": "API tokens", "hint": "For scripts & integrations. The token is shown only once.",
+      "new": "Create token", "expires_days": "Validity (days, empty = unlimited)",
+      "created": "Token created – copy it now:", "last_used": "Last used",
+      "never_used": "Never used", "expires": "Expires"
+    },
+    "rates": {
+      "title": "Exchange rates", "hint": "Rate in base currency ({{base}}) per unit of foreign currency. Maintained manually.",
+      "add": "Add currency", "rate": "Rate"
+    },
+    "smtp": {
+      "title": "SMTP settings", "hint": "For email notifications (bills, goals). Instance admins only.",
+      "host": "Host", "port": "Port", "username": "Username", "password": "Password",
+      "password_keep": "Leave empty to keep unchanged", "from": "From address", "tls": "Use STARTTLS",
+      "test": "Send test email", "test_sent": "Test email sent to {{to}}",
+      "test_failed": "Sending failed – check settings", "not_admin": "Visible to admins only"
+    }
+  },
+  "notifications": {
+    "title": "Notifications", "mark_all": "Mark all as read",
+    "empty": "No notifications", "unread": "{{count}} unread"
+  },
+  "shortcuts": {
+    "title": "Keyboard shortcuts", "new_transaction": "New transaction",
+    "goto_dashboard": "Go to dashboard", "goto_transactions": "Go to transactions",
+    "goto_budget": "Go to budget", "search": "Focus search", "help": "This help"
+  }
+}

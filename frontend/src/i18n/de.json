@@ -1,0 +1,214 @@
+{
+  "app": { "name": "revly budgeting", "tagline": "Dein Geld. Dein Plan. Deine Daten." },
+  "common": {
+    "save": "Speichern", "cancel": "Abbrechen", "delete": "Löschen", "edit": "Bearbeiten",
+    "add": "Hinzufügen", "close": "Schliessen", "search": "Suchen …", "loading": "Lädt …",
+    "none": "Keine", "all": "Alle", "yes": "Ja", "no": "Nein", "confirm": "Bestätigen",
+    "confirm_delete": "Wirklich löschen?", "actions": "Aktionen", "name": "Name",
+    "amount": "Betrag", "date": "Datum", "account": "Konto", "category": "Kategorie",
+    "notes": "Notiz", "tags": "Tags", "status": "Status", "type": "Typ",
+    "currency": "Währung", "total": "Total", "month": "Monat", "filter": "Filter",
+    "export": "Export", "import": "Import", "back": "Zurück", "create": "Erstellen",
+    "apply": "Übernehmen", "from": "Von", "to": "Bis", "today": "Heute",
+    "optional": "optional", "show_archived": "Archivierte anzeigen", "archived": "Archiviert",
+    "archive": "Archivieren", "restore": "Wiederherstellen", "error": "Etwas ist schiefgelaufen",
+    "required": "Pflichtfeld", "per_month": "pro Monat", "copied": "Kopiert!",
+    "no_data": "Noch keine Daten vorhanden", "of": "von", "more": "Mehr", "done": "Fertig",
+    "never": "Nie", "active": "Aktiv", "inactive": "Inaktiv"
+  },
+  "nav": {
+    "dashboard": "Übersicht", "accounts": "Konten", "transactions": "Transaktionen",
+    "budget": "Budget", "categories": "Kategorien", "recurring": "Daueraufträge",
+    "goals": "Sparziele", "debts": "Schulden", "reports": "Berichte",
+    "import": "Import", "settings": "Einstellungen", "logout": "Abmelden",
+    "notifications": "Benachrichtigungen"
+  },
+  "auth": {
+    "login_title": "Willkommen zurück", "register_title": "Konto erstellen",
+    "email": "E-Mail", "password": "Passwort", "name": "Dein Name",
+    "household_name": "Name des Haushalts", "household_placeholder": "z. B. Familie Hintermann",
+    "invite_code": "Einladungscode", "have_invite": "Ich habe einen Einladungscode",
+    "no_account": "Noch kein Konto? Registrieren", "have_account": "Bereits registriert? Anmelden",
+    "login": "Anmelden", "register": "Registrieren", "base_currency": "Basiswährung",
+    "twofa_title": "Zwei-Faktor-Code", "twofa_hint": "Gib den 6-stelligen Code aus deiner Authenticator-App ein.",
+    "verify": "Bestätigen", "failed": "Anmeldung fehlgeschlagen – E-Mail oder Passwort falsch",
+    "rate_limited": "Zu viele Versuche – bitte kurz warten", "email_taken": "Diese E-Mail ist bereits registriert",
+    "invite_invalid": "Einladungscode ungültig oder abgelaufen", "password_hint": "Mindestens 8 Zeichen"
+  },
+  "onboarding": {
+    "title": "Los geht's!", "subtitle": "In drei Schritten zu deinem Budget.",
+    "step1_title": "1. Konto anlegen", "step1_text": "Beginne mit deinem Hauptkonto und dem aktuellen Kontostand.",
+    "step2_title": "2. Kategorien prüfen", "step2_text": "Wir haben ein Standard-Set angelegt – passe es jederzeit an.",
+    "step3_title": "3. Budget verteilen", "step3_text": "Gib jedem Franken einen Job: Verteile dein Geld auf Kategorien.",
+    "account_name_placeholder": "z. B. Girokonto", "current_balance": "Aktueller Kontostand",
+    "go_budget": "Zum Budget", "categories_ready": "{{count}} Kategorien bereit", "skip": "Überspringen"
+  },
+  "dashboard": {
+    "title": "Übersicht", "net_worth": "Nettovermögen", "to_budget": "Noch zu budgetieren",
+    "budget_progress": "Budget {{month}}", "upcoming": "Anstehende Rechnungen",
+    "recent": "Letzte Transaktionen", "accounts": "Konten", "no_bills": "Keine fälligen Rechnungen",
+    "due_in": "in {{count}} Tagen", "due_today": "heute fällig", "view_all": "Alle anzeigen",
+    "income": "Einnahmen", "expenses": "Ausgaben", "overspent": "{{count}} Kategorie(n) überzogen",
+    "spent_of": "{{spent}} von {{assigned}} ausgegeben", "new_transaction": "Neue Transaktion",
+    "this_month": "Diesen Monat"
+  },
+  "accounts": {
+    "title": "Konten", "new": "Neues Konto", "edit": "Konto bearbeiten",
+    "types": {
+      "checking": "Girokonto", "savings": "Sparkonto", "credit_card": "Kreditkarte",
+      "cash": "Bargeld", "loan": "Darlehen", "investment": "Depot"
+    },
+    "initial_balance": "Startsaldo", "opening_date": "Eröffnungsdatum",
+    "balance": "Saldo", "cleared_balance": "Abgeglichener Saldo", "working_balance": "Arbeitssaldo",
+    "reconcile": "Abgleichen", "reconcile_title": "Kontostand abgleichen",
+    "statement_balance": "Saldo laut Kontoauszug",
+    "reconcile_hint": "Alle bestätigten Buchungen werden als abgeglichen markiert. Bei Differenz wird eine Saldokorrektur erstellt.",
+    "reconcile_done": "Abgeglichen – Differenz: {{diff}}", "delete_blocked": "Konto hat Buchungen – bitte archivieren",
+    "archived_section": "Archivierte Konten", "note": "Notiz", "in_base": "≈ {{amount}}"
+  },
+  "transactions": {
+    "title": "Transaktionen", "new": "Neue Transaktion", "edit": "Transaktion bearbeiten",
+    "payee": "Empfänger", "payee_placeholder": "z. B. Migros",
+    "expense": "Ausgabe", "income": "Einnahme", "transfer": "Übertrag",
+    "transfer_to": "Zielkonto", "split": "Aufteilen", "add_split": "Teilbetrag hinzufügen",
+    "split_remaining": "Restbetrag: {{amount}}", "splits_label": "Aufteilung",
+    "statuses": { "pending": "Vorgemerkt", "cleared": "Bestätigt", "reconciled": "Abgeglichen" },
+    "tags_placeholder": "Tags, mit Komma getrennt",
+    "receipt": "Beleg", "upload_receipt": "Beleg hochladen", "view_receipt": "Beleg ansehen",
+    "min_amount": "Min. Betrag", "max_amount": "Max. Betrag",
+    "only_in": "Nur Einnahmen", "only_out": "Nur Ausgaben", "uncategorized": "Ohne Kategorie",
+    "no_results": "Keine Transaktionen gefunden", "sum_filtered": "Summe (gefiltert)",
+    "selected": "{{count}} ausgewählt", "set_category": "Kategorie setzen",
+    "add_tag": "Tag hinzufügen", "set_status": "Status setzen", "delete_selected": "Auswahl löschen",
+    "page_info": "Seite {{page}} / {{pages}}", "prev": "Zurück", "next": "Weiter",
+    "uncategorized_short": "Ohne Kategorie", "transfer_badge": "Übertrag"
+  },
+  "budget": {
+    "title": "Budget", "assigned": "Zugewiesen", "activity": "Aktivität", "available": "Verfügbar",
+    "to_budget": "Noch zu budgetieren", "all_assigned": "Alles verteilt – stark!",
+    "overassigned": "Mehr verteilt als vorhanden", "income_month": "Einnahmen {{month}}",
+    "autofill": "Autofill-Vorschlag", "autofill_hint": "Basierend auf dem Durchschnitt der letzten 3 Monate",
+    "autofill_apply": "Vorschläge übernehmen", "move": "Geld umschichten",
+    "move_from": "Von", "move_to": "Nach", "move_tbb": "Noch zu budgetieren",
+    "overspent_hint": "Überzogen – schichte Geld aus einer anderen Kategorie um",
+    "rollover_on": "Rest wird übertragen", "rollover_off": "Rest verfällt monatlich",
+    "no_categories": "Keine Ausgabenkategorien – lege welche unter Kategorien an."
+  },
+  "categories": {
+    "title": "Kategorien", "new": "Neue Kategorie", "edit": "Kategorie bearbeiten",
+    "income_section": "Einnahmen", "expense_section": "Ausgaben",
+    "icon": "Icon", "color": "Farbe", "parent": "Übergeordnete Kategorie",
+    "rollover": "Budget-Rest in Folgemonat übertragen",
+    "type_income": "Einnahme", "type_expense": "Ausgabe",
+    "delete_blocked": "Kategorie wird verwendet – bitte archivieren",
+    "subcategory_of": "Unterkategorie von {{name}}"
+  },
+  "recurring": {
+    "title": "Daueraufträge & Abos", "new": "Neuer Dauerauftrag", "edit": "Dauerauftrag bearbeiten",
+    "frequency": "Intervall",
+    "freqs": { "weekly": "Wöchentlich", "monthly": "Monatlich", "quarterly": "Quartalsweise", "yearly": "Jährlich", "custom": "Alle N Tage" },
+    "every": "alle {{count}}", "next_date": "Nächste Fälligkeit", "end_date": "Enddatum",
+    "auto_create": "Automatisch buchen", "auto_create_hint": "Sonst nur Erinnerung",
+    "reminder_days": "Erinnerung (Tage vorher)", "run_now": "Jetzt buchen",
+    "monthly_total": "Monatliche Fixkosten", "subscriptions": "{{count}} aktive Daueraufträge",
+    "last_run": "Zuletzt gebucht: {{date}}"
+  },
+  "goals": {
+    "title": "Sparziele", "new": "Neues Sparziel", "edit": "Sparziel bearbeiten",
+    "target_amount": "Zielbetrag", "target_date": "Zieldatum", "current": "Angespart",
+    "linked_account": "Verknüpftes Konto", "linked_hint": "Der Kontosaldo zählt automatisch als Fortschritt",
+    "manual_hint": "Ohne Konto: Fortschritt manuell erfassen", "contribute": "Einzahlung erfassen",
+    "monthly_needed": "{{amount}}/Monat nötig", "reached": "Ziel erreicht! 🎉",
+    "progress": "{{pct}} %"
+  },
+  "debts": {
+    "title": "Schuldenabbau", "new": "Neue Schuld", "edit": "Schuld bearbeiten",
+    "balance": "Offener Betrag", "apr": "Zinssatz (% p.a.)", "min_payment": "Mindestrate",
+    "method": "Strategie", "snowball": "Schneeball", "avalanche": "Lawine",
+    "snowball_hint": "Kleinste Schuld zuerst – schnelle Erfolge",
+    "avalanche_hint": "Höchster Zins zuerst – spart am meisten Zinsen",
+    "monthly_budget": "Monatliches Budget für Schulden", "plan": "Tilgungsplan",
+    "months_to_free": "Monate bis schuldenfrei", "total_interest": "Zinsen gesamt",
+    "debt_free": "Schuldenfrei im {{month}}", "remaining": "Restschuld",
+    "warning_min": "Budget liegt unter der Summe der Mindestraten",
+    "warning_not_payable": "Mit diesem Budget nicht tilgbar",
+    "comparison": "Vergleich der Strategien", "no_debts": "Keine Schulden erfasst – gut so!",
+    "linked_account": "Verknüpftes Konto"
+  },
+  "reports": {
+    "title": "Berichte", "spending": "Ausgaben nach Kategorie", "trend": "Einnahmen vs. Ausgaben",
+    "cashflow": "Cashflow-Kalender", "net_worth": "Nettovermögen", "money_flow": "Wohin geht mein Geld?",
+    "tight_days": "{{count}} Tage im Minus", "start_balance": "Startsaldo",
+    "export_pdf": "PDF exportieren", "export_csv": "CSV exportieren",
+    "income_sources": "Einnahmen", "expense_targets": "Ausgaben",
+    "assets": "Vermögen", "liabilities": "Schulden", "net": "Netto",
+    "months_12": "12 Monate", "months_24": "24 Monate", "period": "Zeitraum"
+  },
+  "imports": {
+    "title": "Transaktionen importieren", "upload": "Datei auswählen",
+    "file_hint": "CSV, OFX/QFX oder QIF – max. 5 MB",
+    "step_upload": "1. Datei", "step_map": "2. Zuordnung", "step_done": "3. Ergebnis",
+    "detected": "{{count}} Zeilen erkannt ({{format}})",
+    "map_date": "Spalte für Datum", "map_amount": "Spalte für Betrag",
+    "map_payee": "Spalte für Empfänger", "map_notes": "Spalte für Notiz",
+    "target_account": "Zielkonto", "default_category": "Standard-Kategorie",
+    "decimal_comma": "Dezimal-Komma (12,50)", "invert": "Vorzeichen umkehren",
+    "skip_duplicates": "Duplikate überspringen", "run_import": "Importieren",
+    "result": "{{imported}} importiert, {{duplicates}} Duplikate übersprungen, {{errors}} Fehler",
+    "preview": "Vorschau", "auto": "Automatisch"
+  },
+  "settings": {
+    "title": "Einstellungen",
+    "tabs": { "profile": "Profil", "security": "Sicherheit", "household": "Haushalt", "tokens": "API-Tokens", "rates": "Wechselkurse", "smtp": "E-Mail (Admin)" },
+    "profile": {
+      "language": "Sprache", "email_notifications": "E-Mail-Benachrichtigungen",
+      "theme": "Design", "theme_light": "Hell", "theme_dark": "Dunkel", "saved": "Gespeichert"
+    },
+    "security": {
+      "change_password": "Passwort ändern", "current_password": "Aktuelles Passwort",
+      "new_password": "Neues Passwort", "password_changed": "Passwort geändert – andere Sitzungen wurden abgemeldet",
+      "twofa": "Zwei-Faktor-Authentifizierung (TOTP)", "twofa_on": "2FA ist aktiv",
+      "twofa_off": "2FA ist nicht aktiv", "twofa_start": "2FA einrichten",
+      "twofa_scan": "Scanne den QR-Code mit deiner Authenticator-App und bestätige mit einem Code.",
+      "twofa_secret": "Secret (manuell)", "twofa_code": "6-stelliger Code",
+      "twofa_enable": "2FA aktivieren", "twofa_disable": "2FA deaktivieren",
+      "twofa_enabled": "2FA aktiviert", "twofa_disabled": "2FA deaktiviert"
+    },
+    "household": {
+      "title": "Haushalt & Mitglieder", "members": "Mitglieder", "role": "Rolle",
+      "roles": { "owner": "Owner", "editor": "Editor", "viewer": "Viewer" },
+      "invites": "Einladungen", "create_invite": "Einladung erstellen",
+      "invite_hint": "Teile den Code – beim Registrieren oder unter „Haushalt beitreten“ einlösbar.",
+      "join": "Haushalt beitreten", "join_code": "Einladungscode",
+      "expires": "Gültig bis {{date}}", "used": "Eingelöst", "remove": "Entfernen",
+      "switch": "Aktiver Haushalt", "create_new": "Neuen Haushalt erstellen",
+      "base_currency": "Basiswährung", "member_count": "{{count}} Mitglieder"
+    },
+    "tokens": {
+      "title": "API-Tokens", "hint": "Für Skripte & Integrationen. Der Token wird nur einmal angezeigt.",
+      "new": "Token erstellen", "expires_days": "Gültigkeit (Tage, leer = unbegrenzt)",
+      "created": "Token erstellt – jetzt kopieren:", "last_used": "Zuletzt verwendet",
+      "never_used": "Nie verwendet", "expires": "Läuft ab"
+    },
+    "rates": {
+      "title": "Wechselkurse", "hint": "Kurs in Basiswährung ({{base}}) pro Einheit Fremdwährung. Manuell gepflegt.",
+      "add": "Währung hinzufügen", "rate": "Kurs"
+    },
+    "smtp": {
+      "title": "SMTP-Einstellungen", "hint": "Für E-Mail-Benachrichtigungen (Rechnungen, Ziele). Nur für Instanz-Admins.",
+      "host": "Host", "port": "Port", "username": "Benutzername", "password": "Passwort",
+      "password_keep": "Leer lassen = unverändert", "from": "Absender-Adresse", "tls": "STARTTLS verwenden",
+      "test": "Test-E-Mail senden", "test_sent": "Test-E-Mail an {{to}} gesendet",
+      "test_failed": "Versand fehlgeschlagen – Einstellungen prüfen", "not_admin": "Nur für Admins sichtbar"
+    }
+  },
+  "notifications": {
+    "title": "Benachrichtigungen", "mark_all": "Alle als gelesen markieren",
+    "empty": "Keine Benachrichtigungen", "unread": "{{count}} ungelesen"
+  },
+  "shortcuts": {
+    "title": "Tastatur-Shortcuts", "new_transaction": "Neue Transaktion",
+    "goto_dashboard": "Zur Übersicht", "goto_transactions": "Zu Transaktionen",
+    "goto_budget": "Zum Budget", "search": "Suche fokussieren", "help": "Diese Hilfe"
+  }
+}
