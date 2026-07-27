@@ -1,0 +1,46 @@
+# ============================================================================
+# revly-budgeting – Deploy für das UGREEN-NAS (192.168.1.125)
+# ============================================================================
+# Ablage:  /volume2/docker/revly-budgeting/revly-budgeting.yaml
+#
+# Einmalig vorbereiten (Container läuft als Non-Root-User mit UID 1000):
+#   mkdir -p /volume2/docker/revly-budgeting/data
+#   chown -R 1000:1000 /volume2/docker/revly-budgeting/data
+#
+# Start:   docker compose -f revly-budgeting.yaml up -d
+# Update:  docker compose -f revly-budgeting.yaml pull
+#          docker compose -f revly-budgeting.yaml up -d
+# Logs:    docker logs -f revly-budgeting
+#
+# Danach:  http://192.168.1.125:3064  (erster registrierter User = Admin)
+#
+# Port 3064: laut Port-Übersicht im Vault frei (3050 Revly, 3060 Second Brain,
+# 3061 ntfy, 3062 Revly-Tickets, 3063 Hustlify). Vor dem Start gegen die
+# Live-Realität prüfen:  docker ps --format 'table {{.Names}}\t{{.Ports}}'
+#
+# Extern (optional): In Nginx Proxy Manager einen Host
+#   budget.jucloudy.com -> http://192.168.1.125:3064   anlegen.
+# ============================================================================
+
+services:
+  revly-budgeting:
+    image: <DOCKERHUB_USERNAME>/revly-budgeting:latest
+    container_name: revly-budgeting
+    restart: unless-stopped
+    ports:
+      - "3064:8000"
+    volumes:
+      # SQLite-DB, generierter SECRET_KEY und Beleg-Uploads.
+      # Golden Rule: Config/Runtime -> /volume2/docker/<container_name>
+      - /volume2/docker/revly-budgeting/data:/data
+    environment:
+      - TZ=Europe/Berlin
+      - DEFAULT_LOCALE=de
+      # - SECRET_KEY=bitte-langen-zufallswert-setzen   # optional; ohne wird einer generiert und in /data persistiert
+      # - ALLOWED_ORIGINS=https://budget.jucloudy.com  # nur nötig bei Zugriff über eigene Domain/anderen Origin
+      # - DATABASE_URL=postgresql://user:pass@host:5432/revly   # optional statt SQLite
+    # Der Healthcheck ist im Image eingebaut (GET /api/health alle 30s).
+    #
+    # Falls du das chown oben weglassen willst, stattdessen nach NAS-Konvention
+    # (PUID/PGID=0) als root laufen lassen:
+    # user: "0:0"
