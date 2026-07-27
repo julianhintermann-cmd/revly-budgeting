@@ -25,7 +25,7 @@ the onboarding. That's it — data, uploads and the auto-generated secret live i
 Or build locally from source:
 
 ```bash
-git clone https://github.com/<GITHUB_USERNAME>/revly-budgeting.git
+git clone https://github.com/julianhintermann-cmd/revly-budgeting.git
 cd revly-budgeting
 docker build -t revly-budgeting .
 docker run -d --name revly -p 8000:8000 -v revly-data:/data revly-budgeting
